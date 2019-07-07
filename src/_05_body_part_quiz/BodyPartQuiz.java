@@ -21,10 +21,10 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the default package, and change the names below.
 
-	String firstImage = "src/body_part_quiz/arnold.jpeg";
-	String secondImage = "src/body_part_quiz/leonardo.jpeg";
-	String thirdImage = "src/body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/body_part_quiz/jack.jpeg";
+	String firstImage = "src/_05_body_part_quiz/Sana.jpg"; 
+	String secondImage = "src/_05_body_part_quiz/Mina.jpg";
+	String thirdImage = "src/_05_body_part_quiz/Felix.jpg";
+	String fourthImage = "src/_05_body_part_quiz/Minho.jpg";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -42,7 +42,7 @@ public class BodyPartQuiz {
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 500);
+		window.setSize(200, 250);
 
 		showNextImage();
 
@@ -51,12 +51,18 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+		int score = 0;
 		// 2. Set the size of the window in the initializeGui() method 
-
+		
 		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("who is this?");
-
+		String guess1 = JOptionPane.showInputDialog("Who is this?");
+		if(guess1.equals("Sana")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+			score = score+1;
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong, the person is Sana, from the Kpop girl group Twice");
+		}
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
 
@@ -67,9 +73,34 @@ public class BodyPartQuiz {
 		showNextImage();
 
 		// 8. .... repeat 4-7 for all your images.....
-
+		String guess2 = JOptionPane.showInputDialog("Who is this?");
+		if(guess2.equals("Mina")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+			score = score+1;
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong, this is Mina from the kpop girl group Twice");
+		}
+		showNextImage();
+		String guess3 = JOptionPane.showInputDialog("Who is this?");
+		if(guess3.equals("Felix")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+			score = score+1;
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong, this is Felix from the kpop boy group Stray Kids");
+		}
+		showNextImage();
+		String guess4 = JOptionPane.showInputDialog("Who is this?");
+		if(guess4.equals("Minho")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+			score = score+1;
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong, this is Minho from the kpop boy group Stray Kids");
+		}
 		// 9. Show them their current score
-
+		JOptionPane.showMessageDialog(null, "Your current score is " + score);
 	}
 
 	public void showNextImage() {

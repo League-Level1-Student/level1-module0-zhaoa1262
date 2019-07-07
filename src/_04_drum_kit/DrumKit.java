@@ -5,6 +5,7 @@ package _04_drum_kit;
  */
 
 import java.applet.AudioClip;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -21,7 +22,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 
 	JLabel drumLabelWithImage;
-
+	JLabel cymbalLabelWithImage;
 	public void run() throws MalformedURLException {
 
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
@@ -30,7 +31,7 @@ public class DrumKit implements MouseListener {
 		// set its default close operation to JFrame.EXIT_ON_CLOSE
 		frame.setVisible(true);
 		// 3. Set the size of the frame
-		frame.setSize(500, 500);
+		frame.setPreferredSize(new Dimension (1000, 1000));
 		// 4. Set the title of the frame
 
 		// 5. Make a JPanel variable and initialize it using "new JPanel()
@@ -53,10 +54,18 @@ public class DrumKit implements MouseListener {
 		// your drum image?
 		frame.pack();
 		// 13. add this mouse listener to drumLabelWithImage
-drumLabelWithImage.add();
+		drumLabelWithImage.addMouseListener(this);
 		// 18. Add more images to make a drumkit. Remember to add this mouse
 		// listener to each one.
-
+		String c = "cymbal.jpg";
+		cymbalLabelWithImage = createLabelImage(c);
+		panel.add(cymbalLabelWithImage);
+		cymbalLabelWithImage.addMouseListener(this);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		
+		
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -70,9 +79,11 @@ drumLabelWithImage.add();
 		// 15. Download a drum sound and drop it into your "default package".
 		// You can find it on freesound.org. To download it, log in as
 		// leagueofamazing/code4life.
-
+		if(drumLabelWithImage==drumClicked) {
+		playSound("drum.wav");
+		}
 		// 16. If they clicked on the drumImage...
-
+		
 		// 17. ...use the playSound method to play a drum sound. Test to see if
 		// it works
 
