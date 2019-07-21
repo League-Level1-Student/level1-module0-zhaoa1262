@@ -89,7 +89,7 @@ public void actionPerformed(ActionEvent e) {
 	if(x==5) {
 		panel.add(createLabelImage("jackInTheBox.png"));
 		
-		createLabelImage("jackInTheBox.png");
+		//createLabelImage("jackInTheBox.png");
 			showPicture("jackInTheBox.png");
 			playSound("homer-woohoo.wav");
 		}
